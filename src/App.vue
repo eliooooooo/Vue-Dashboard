@@ -4,13 +4,16 @@ import Header from './components/Header.vue'
 import Aside from './components/Aside.vue'
 import SearchBar from './components/SearchBar.vue'
 import Breadcrumb from './components/Breadcrumb.vue'
+import { useRoute } from 'vue-router'
+
+const route = useRoute()
 </script>
 
 <template>
   <Header />
   <div class="bg-light text-dark flex items-center border-b border-dark h-16">
     <div class="container flex flex-row items-center">
-      <Breadcrumb />
+      <Breadcrumb :breadcrumb="route.meta.breadcrumb" />
       <SearchBar />
     </div>
   </div>

@@ -1,12 +1,22 @@
-<script>
+<script setup>
+const props = defineProps({
+  breadcrumb: {
+    type: Array,
+    required: true
+  }
+})
+
+console.log(props)
 </script>
 
 <template>
     <div aria-label="breadcrumb">
         <ol class="breadcrumb flex flex-row gap-3">
-            <li class="breadcrumb-item"><router-link :to="{ name: 'home' }">Home</router-link></li>
-            <li>/</li>
-            <li class="breadcrumb-item active" aria-current="page">Breadcrumb</li>
+            <li v-for="(item, index) in breadcrumb" :key="item.name" class="flex flex-row gap-3">
+                <a v-if="item.link" :href="item.link">{{ item.name }}</a>
+                <span v-else>{{ item.name }}</span>
+                <span v-if="index < breadcrumb.length - 1">/</span>
+            </li>
         </ol>
     </div>
 </template>

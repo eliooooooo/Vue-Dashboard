@@ -7,13 +7,22 @@ const router = createRouter({
         {
             path: '/',
             name: 'home',
-            meta: { title: 'HomePage - Track My Site' }
+            meta: { 
+                title: 'HomePage - Track My Site',
+                breadcrumb: [{ name: 'Home' }]
+            },
         },
         {
             path: '/login',
             name: 'login',
             component: Login,
-            meta: { title: 'Login Form - Track My Site' }
+            meta: { 
+                title: 'Login Form - Track My Site',
+                breadcrumb: [
+                    { name: 'Home', link: '/' },
+                    { name: 'Login' }
+                ] 
+            },
         }
     ]
 })
