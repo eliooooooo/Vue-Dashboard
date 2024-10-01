@@ -18,11 +18,46 @@ const router = createRouter({
             component: Login,
             meta: { 
                 title: 'Login Form - Track My Site',
+                full: true,
                 breadcrumb: [
                     { name: 'Home', link: '/' },
                     { name: 'Login' }
                 ] 
             },
+        },
+        {
+            path: '/register',
+            name: 'register',
+            meta: {
+                title: 'Register Form - Track My Site',
+                full: true,
+                breadcrumb: [
+                    { name: 'Home', link: '/' },
+                    { name: 'Register' }
+                ]
+            }
+        },
+        {
+            path: '/dashboard',
+            name: 'dashboard',
+            meta: {
+                title: 'Dashboard - Track My Site',
+                breadcrumb: [
+                    { name: 'Home', link: '/' },
+                    { name: 'Dashboard' }
+                ]
+            }
+        },
+        {
+            path: '/sites',
+            name: 'sites',
+            meta: {
+                title: 'Sites - Track My Site',
+                breadcrumb: [
+                    { name: 'Home', link: '/' },
+                    { name: 'Sites' }
+                ]
+            }
         }
     ]
 })
