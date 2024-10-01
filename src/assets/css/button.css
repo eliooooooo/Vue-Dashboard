@@ -1,5 +1,5 @@
 .btn {
-    @apply block border-none px-10 py-5 rounded-lg cursor-pointer font-semibold text-white transition-all duration-200 ease-in-out;
+    @apply block border-none px-10 py-5 rounded-lg cursor-pointer font-semibold text-light transition-all duration-200 ease-in-out;
 }
 
 .btn.primary {
@@ -27,7 +27,7 @@
 }
 
 .btn.primary.outline:hover {
-    @apply bg-primary text-white border-primary;
+    @apply bg-primary text-light border-primary;
 }
 
 .btn.secondary.outline {
@@ -35,5 +35,5 @@
 }
 
 .btn.secondary.outline:hover {
-    @apply bg-secondary text-white;
+    @apply bg-secondary text-light;
 }

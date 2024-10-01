@@ -8,4 +8,9 @@ import Alpine from 'alpinejs'
 window.Alpine = Alpine
 Alpine.start()
 
+router.beforeEach((to, from, next) => {
+    document.title = to.meta.title || 'Default Title'
+    next()
+})
+
 createApp(App).use(router).mount('#app')
