@@ -1,16 +1,14 @@
-@import './assets/css/colors.css';
 @import './assets/css/button.css';
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
 body {
-  margin: 0;
-  padding: 0;
+  @apply m-0 p-0;
 }
 
 a {
-  color: var(--primary-color);
-  transition: all 0.1s ease-in-out;
-}
-
-a:hover {
-  color: var(--primary-color-dark);
+  @apply text-primary hover:text-primary-dark transition-all duration-100 ease-in-out;
 }

@@ -1,53 +1,39 @@
 .btn {
-    transition: all 0.2s ease-in-out;
-    border-radius: 0.5rem;
-    border: none;
-    padding: 1.25rem 2.5rem;
-    display: block;
-    cursor: pointer;
-    text-decoration: none;
-    font-weight: 600;
-    color: var(--text-color);
+    @apply block border-none px-10 py-5 rounded-lg cursor-pointer font-semibold text-white transition-all duration-200 ease-in-out;
 }
 
 .btn.primary {
-    background-color: var(--primary-color);
+    @apply bg-primary;
 }
 
 .btn.primary:hover {
-    background-color: var(--primary-color-dark);
+    @apply bg-primary-dark;
 }
 
 .btn.secondary {
-    background-color: var(--secondary-color);
+    @apply bg-secondary;
 }
 
 .btn.small {
-    padding: 0.75rem 1.25rem;
-    border-radius: 0.25rem;
+    @apply py-3 px-5 rounded;
 }
 
 .btn.outline {
-    background-color: transparent;
-    border: 2px solid;
+    @apply bg-transparent border-2;
 }
 
 .btn.primary.outline {
-    color: var(--primary-color);
-    border-color: var(--primary-color);
+    @apply text-primary border-primary;
 }
 
 .btn.primary.outline:hover {
-    background-color: var(--primary-color);
-    color: var(--text-color);
+    @apply bg-primary text-white;
 }
 
 .btn.secondary.outline {
-    color: var(--secondary-color);
-    border-color: var(--secondary-color);
+    @apply text-secondary border-secondary;
 }
 
 .btn.secondary.outline:hover {
-    background-color: var(--secondary-color);
-    color: var(--text-color);
+    @apply bg-secondary text-white;
 }
