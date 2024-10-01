@@ -13,7 +13,7 @@
                 <label for="password">Mot de passe</label>
                 <input type="password" id="password" name="password" />
             </div>
-            <button type="submit">Se connecter</button>
+            <button type="submit" class="btn primary small">Login</button>
         </form>
     </div>
 </template>

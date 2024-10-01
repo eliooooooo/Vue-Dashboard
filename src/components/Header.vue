@@ -8,6 +8,7 @@
             <ul>
                 <li><router-link to="/">Home</router-link></li>
                 <li><router-link to="/login">Login</router-link></li>
+                <li><router-link to="/register" class="btn primary small outline">Register</router-link></li>
             </ul>
         </nav>
     </header>
@@ -25,6 +26,7 @@
     nav ul {
         display: flex;
         justify-content: center;
+        align-items: center;
         list-style: none;
         padding: 0;
     }

@@ -1,4 +1,16 @@
+@import './assets/css/colors.css';
+@import './assets/css/button.css';
+
 body {
   margin: 0;
   padding: 0;
+}
+
+a {
+  color: var(--primary-color);
+  transition: all 0.1s ease-in-out;
+}
+
+a:hover {
+  color: var(--primary-color-dark);
 }
