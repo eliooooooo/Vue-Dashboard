@@ -2,7 +2,7 @@
 </script>
 
 <template>
-    <aside class="bg-light text-dark p-4 flex flex-col justify-between h-[calc(100vh-8rem)]">
+    <aside class="bg-primary-light text-dark p-4 flex flex-col justify-between h-[calc(100vh-12rem)]">
         <nav>
             <ul class="[&>li]:p-2 [&>li>a]:text-dark [&>li]:no-underline [&>li>a]:flex [&>li>a]:flex-row [&>li>a]:gap-3">
                 <li><router-link to="/dashboard">
