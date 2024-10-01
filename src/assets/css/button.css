@@ -27,7 +27,7 @@
 }
 
 .btn.primary.outline:hover {
-    @apply bg-primary text-white;
+    @apply bg-primary text-white border-primary;
 }
 
 .btn.secondary.outline {

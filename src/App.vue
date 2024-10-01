@@ -6,23 +6,11 @@ import Aside from './components/Aside.vue'
 
 <template>
   <Header />
-  <div class="container_aside">
+  <div class="container_aside flex w-full" x-data="{ asideOpen: true }">
     <Aside />
-    <div class="container_content">
+    <div class="container_content flex flex-col justify-between flex-grow h-[calc(100vh-8rem)]">
       <router-view />
       <Footer />
     </div>
   </div>
 </template>
-
-<style scoped>
-.container_aside {
-  display: flex;
-  flex-wrap: nowrap;
-  width: 100%;
-}
-
-.container_content {
-  flex-grow: 1;
-}
-</style>

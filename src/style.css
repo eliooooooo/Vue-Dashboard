@@ -1,4 +1,6 @@
 @import './assets/css/button.css';
+@import './assets/css/container.css';
+@import './assets/css/heading.css';
 
 @tailwind base;
 @tailwind components;
