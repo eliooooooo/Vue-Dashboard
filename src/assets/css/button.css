@@ -7,7 +7,7 @@
 }
 
 .btn.primary:hover {
-    @apply bg-primary-dark;
+    @apply bg-primary-dark text-light;
 }
 
 .btn.secondary {
