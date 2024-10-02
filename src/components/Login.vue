@@ -1,21 +1,20 @@
 <script>
-import { RouterLink } from 'vue-router';
 </script>
 
 <template>
     <div class="bg-primary">
-        <div class="container flex flex-row">
-            <div class="flex flex-col items-center pt-20 gap-3 bg-light w-1/3 p-10">
+        <div class="container flex flex-col md:flex-row min-h-screen">
+            <div class="flex flex-col items-center pt-10 md:pt-20 gap-3 bg-light w-full md:w-1/2 lg:w-1/3 p-5 md:p-10">
                 <h1 class="text-primary !font-medium">Log in to your account</h1>
-                <p class="text-lg font-bold">Don't have an account? <router-link :to="{name: 'register'}">Sign Up</router-link></p>
-                <form class="flex flex-col gap-4 mt-10 w-full [&>div>input]:rounded-md">
+                <p class="lg:text-lg font-bold">Don't have an account? <router-link :to="{name: 'register'}">Sign Up</router-link></p>
+                <form class="flex flex-col gap-4 mt-5 md:mt-10 w-full [&>div>input]:rounded-md">
                     <div class="flex flex-col gap-1 w-full">
                         <label for="email">Email</label>
                         <input type="email" id="email" name="email" placeholder="john.doe@gmail.com" required/>
                     </div>
                     <div class="flex flex-col gap-1">
-                        <label for="password">Mot de passe</label>
-                        <input type="password" id="password" name="password" placeholder="*****" required/>
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" placeholder="*****" required current-password/>
                     </div>
                     <button type="submit" class="btn primary small">Login</button>
                 </form>
@@ -28,8 +27,8 @@ import { RouterLink } from 'vue-router';
                     </router-link>
                 </nav>
             </div>
-            <div class=" h-screen w-2/3 flex flex-col justify-between text-light">
-                <div class="w-1/2 mx-auto mt-36">
+            <div class="flex-grow md:h-screen w-full md:w-1/2 lg:w-2/3 flex flex-col justify-between text-light">
+                <div class="md:w-1/2 mx-auto mt-10 md:mt-36">
                     <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h2>
                     <p>Quasi beatae explicabo et deserunt? Animi quo distinctio repudiandae, vel rem reprehenderit tempora beatae labore nesciunt eaque a autem at sit maiores?</p>
                 </div>
