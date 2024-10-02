@@ -2,7 +2,7 @@
 </script>
 
 <template>
-    <header class="bg-light text-dark h-32 flex items-center border-b border-dark">
+    <header class="bg-light w-full text-dark flex items-center border-b border-dark py-2">
         <div class="container flex flex-row items-center justify-between">
             <p class="h1">Track My Site</p>
             <nav id="nav">

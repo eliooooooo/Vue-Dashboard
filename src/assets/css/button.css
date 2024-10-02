@@ -1,5 +1,5 @@
 .btn {
-    @apply block border-none px-10 py-5 rounded-lg cursor-pointer font-semibold text-light transition-all duration-200 ease-in-out;
+    @apply block border-none px-5 py-3 rounded-lg cursor-pointer font-semibold text-light transition-all duration-200 ease-in-out;
 }
 
 .btn.primary {
@@ -15,7 +15,7 @@
 }
 
 .btn.small {
-    @apply py-3 px-5 rounded;
+    @apply py-1 px-3 rounded;
 }
 
 .btn.outline {
