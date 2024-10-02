@@ -1,5 +1,9 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Login from '../components/Login.vue'
+import Register from '../components/Register.vue'
+import Dashboard from '../components/Dashboard.vue'
+import Home from '../components/Home.vue'
+import Sites from '../components/Sites.vue'
 
 const router = createRouter({
     history: createWebHistory(import.meta.env.BASE_URL),
@@ -7,6 +11,7 @@ const router = createRouter({
         {
             path: '/',
             name: 'home',
+            component: Home,
             meta: { 
                 title: 'HomePage - Track My Site',
                 breadcrumb: [{ name: 'Home' }]
@@ -28,6 +33,7 @@ const router = createRouter({
         {
             path: '/register',
             name: 'register',
+            component: Register,
             meta: {
                 title: 'Register Form - Track My Site',
                 full: true,
@@ -40,6 +46,7 @@ const router = createRouter({
         {
             path: '/dashboard',
             name: 'dashboard',
+            component: Dashboard,
             meta: {
                 title: 'Dashboard - Track My Site',
                 breadcrumb: [
@@ -51,6 +58,7 @@ const router = createRouter({
         {
             path: '/sites',
             name: 'sites',
+            component: Sites,
             meta: {
                 title: 'Sites - Track My Site',
                 breadcrumb: [
@@ -58,6 +66,14 @@ const router = createRouter({
                     { name: 'Sites' }
                 ]
             }
+        },
+        {
+            path: '/terms',
+            name: 'terms'
+        },
+        {
+            path: '/privacy',
+            name: 'privacy'
         }
     ]
 })

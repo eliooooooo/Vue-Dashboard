@@ -13,16 +13,16 @@ const route = useRoute()
 <template>
   <div v-if="!route.meta.full">
     <BypassLink />
-    <Header />
-    <div class="bg-light text-dark flex items-center border-b border-dark h-16">
-      <div class="container flex flex-row items-center">
-        <Breadcrumb :breadcrumb="route.meta.breadcrumb" />
+    <div class="static w-full bg-light text-dark flex flex-col items-center border-b border-dark h-[134px] md:h-[102px]">
+      <Header />
+      <div class="relative container flex flex-col md:flex-row gap-3 items-center py-2">
+        <Breadcrumb class="w-full" :breadcrumb="route.meta.breadcrumb" />
         <SearchBar />
       </div>
     </div>
-    <div class="container_aside flex w-full" x-data="{ asideOpen: false }">
+    <div class="container_aside relative flex w-full overflow-hidden" x-data="{ asideOpen: false }">
       <Aside />
-      <div class="container_content bg-light flex flex-col justify-between flex-grow h-[calc(100vh-12rem)]">
+      <div class="container_content overflow-scroll overflow-x-hidden bg-light flex flex-col justify-between flex-grow h-[calc(100vh-134px)] md:h-[calc(100vh-102px)]">
         <div class="container px-10 py-4">
           <router-view id="main" />
         </div>
