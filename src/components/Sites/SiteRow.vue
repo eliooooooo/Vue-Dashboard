@@ -1,5 +1,5 @@
 <script setup>
-import { defineProps } from 'vue'
+import { defineProps, defineEmits, ref } from 'vue'
 
 const props = defineProps({
     site: {
@@ -8,12 +8,19 @@ const props = defineProps({
     }
 })
 
+const emits = defineEmits(['remove-site', 'copied'])
+
+const showCopied = ref(false)
+
 const copyContent = (event) => {
     navigator.clipboard.writeText(event.target.parentElement.previousElementSibling.textContent)
-    alert('Copied to clipboard')
+    emits('copied', props.site.id)
+    showCopied.value = true
+    setTimeout(() => {
+        showCopied.value = false
+    }, 3000)
 }
 
-const emits = defineEmits(['remove-site'])
 const removeSite = () => {
     emits('remove-site', props.site.id)
 }
@@ -31,10 +38,11 @@ const removeSite = () => {
             </svg>
         </a></td>
         <td><div class="flex flex-row gap-2">
-            <p>{{ site.key }}</p><div @click="copyContent" class="block bg-gray-200 rounded-md cursor-pointer">
+            <p>{{ site.key }}</p><div @click="copyContent" class="block relative bg-gray-200 rounded-md cursor-pointer">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-copy m-1.5" viewBox="0 0 16 16">
                     <path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"/>
                 </svg>
+                <span v-if="showCopied" id="key-{{ site.id }}" class="bg-green-500 w-2 h-2 rounded-full absolute -top-0.5 -right-1" transition></span>
             </div>
         </div></td>
         <td>
