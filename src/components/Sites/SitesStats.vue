@@ -1,4 +1,5 @@
 <script setup>
+import OverviewChart from './OverviewChart.vue';
 </script>
 
 <template>
@@ -21,7 +22,9 @@
         </div>
         <div class="w-full border-dark border-b pt-2" x-show="openStats" x-cloak transition></div>
         <div x-show="openStats" x-cloak transition>
-            
+            <div>
+                <OverviewChart />
+            </div>
             <p class="mt-3">
                 No stats to display
             </p>
