@@ -29,6 +29,11 @@
                         <label for="password">Password</label>
                         <input type="password" id="password" name="password" placeholder="*****" required current-password/>
                     </div>  
+                    <div class="flex flex-col gap-1">
+                        <label>Company</label>
+                        <input type="text" id="company" name="company" placeholder="Company id" required/>
+                        <p>Don't have company account? <router-link :to="{ name: 'register-company' }">Register your compagny</router-link></p>
+                    </div>
                     <div class="flex flex-row items-center gap-2">
                         <input class="!rounded" type="checkbox" id="optin" name="optin"/>
                         <label for="optin">I agree to the <router-link :to="{ name: 'terms' }">Terms of Service</router-link> and <router-link :to="{ name: 'privacy' }">Privacy Policy</router-link>.</label>
@@ -36,11 +41,11 @@
                     <button type="submit" class="btn primary small">Create my account</button>
                 </form>
                 <nav id="nav">
-                    <router-link :to="{ name: 'home'}" class="flex flex-row gap-2 items-center">
+                    <router-link :to="{ name: 'dashboard'}" class="flex flex-row gap-2 items-center">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-left" viewBox="0 0 16 16">
                             <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0"/>
                         </svg>
-                        Back to home
+                        Back to dashboard
                     </router-link>
                 </nav>
             </div>

@@ -7,8 +7,8 @@
             <p class="h1">Track My Site</p>
             <nav id="nav">
                 <ul class="flex justify-center items-center gap-5 [&>li>a]:text-dark [&>li]:no-underline">
-                    <li><router-link :to="{ name: 'home' }">Home</router-link></li>
-                    <li><router-link :to="{ name : 'login' }">Login</router-link></li>
+                    <li><router-link :to="{ name: 'dashboard' }">Dashboard</router-link></li>
+                    <li><router-link :to="{ name : 'account' }">Account</router-link></li>
                     <li><router-link to="/register" class="btn primary small outline">Register</router-link></li>
                 </ul>
             </nav>

@@ -2,32 +2,30 @@ import { createRouter, createWebHistory } from 'vue-router'
 import Login from '../components/Login.vue'
 import Register from '../components/Register.vue'
 import Dashboard from '../components/Dashboard.vue'
-import Home from '../components/Home.vue'
 import Sites from '../components/Sites.vue'
+import Account from '../components/Account.vue'
+import CompanyRegister from '../components/CompanyRegister.vue'
+import Company from '../components/Company.vue'
 
 const router = createRouter({
     history: createWebHistory(import.meta.env.BASE_URL),
     routes: [
         {
             path: '/',
-            name: 'home',
-            component: Home,
-            meta: { 
-                title: 'HomePage - Track My Site',
-                breadcrumb: [{ name: 'Home' }]
+            name: 'dashboard',
+            component: Dashboard,
+            meta: {
+                title: 'Dashboard - Track My Site',
+                breadcrumb: [{ name: 'Dashboard' }]
             },
         },
         {
             path: '/login',
             name: 'login',
             component: Login,
-            meta: { 
+            meta: {
                 title: 'Login Form - Track My Site',
                 full: true,
-                breadcrumb: [
-                    { name: 'Home', link: '/' },
-                    { name: 'Login' }
-                ] 
             },
         },
         {
@@ -37,21 +35,38 @@ const router = createRouter({
             meta: {
                 title: 'Register Form - Track My Site',
                 full: true,
+            }
+        },
+        {
+            path: '/register-company',
+            name: 'register-company',
+            component: CompanyRegister,
+            meta: {
+                title: 'Register Company - Track My Site',
+                full: true,
+            }
+        },
+        {
+            path: '/company',
+            name: 'company',
+            component: Company,
+            meta: {
+                title: 'Company - Track My Site',
                 breadcrumb: [
-                    { name: 'Home', link: '/' },
-                    { name: 'Register' }
+                    { name: 'Dashboard', link: '/' },
+                    { name: 'Company' }
                 ]
             }
         },
         {
-            path: '/dashboard',
-            name: 'dashboard',
-            component: Dashboard,
+            path: '/account',
+            name: 'account',
+            component: Account,
             meta: {
-                title: 'Dashboard - Track My Site',
+                title: 'User Account - Track My Site',
                 breadcrumb: [
-                    { name: 'Home', link: '/' },
-                    { name: 'Dashboard' }
+                    { name: 'Dashboard', link: '/' },
+                    { name: 'Account' }
                 ]
             }
         },
@@ -62,7 +77,7 @@ const router = createRouter({
             meta: {
                 title: 'Sites - Track My Site',
                 breadcrumb: [
-                    { name: 'Home', link: '/' },
+                    { name: 'Dashboard', link: '/' },
                     { name: 'Sites' }
                 ]
             }
