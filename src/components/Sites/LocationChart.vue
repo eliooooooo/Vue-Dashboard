@@ -1,13 +1,36 @@
-<script setup>
-import OverviewChart from './OverviewChart.vue';
+<script>
+import { Doughnut } from 'vue-chartjs'
+import { Chart as ChartJS, Title, Tooltip, Legend, ArcElement } from 'chart.js'
+
+ChartJS.register(Title, Tooltip, Legend, ArcElement)
+
+export default {
+    name: 'LocationChart',
+    components: { Doughnut },
+    data() {
+        return {
+            chartData: {
+                labels: ['France', 'Allemagne', 'Italie'],
+                datasets: [{ data: [40, 20, 12] }]
+            },
+            chartOptions: {
+                responsive: true
+            }
+        }
+    },
+    mounted() {
+        console.log('Chart Data:', this.chartData)
+        console.log('Chart Options:', this.chartOptions)
+    }
+}
 </script>
 
 <template>
-    <div class="border border-dark p-4 rounded-md flex flex-col" x-data="{ openStats: true }">
+        <div class="border border-dark p-4 rounded-md flex flex-col" x-data="{ openStats: true }">
         <div class="flex flex-row justify-between items-center">
             <div>
-                <h1>Overview</h1>
-                <p>Here are overview stats for the selected websites</p>
+                <h1>Location</h1>
+                <p>The location from where the users vitis your site</p>
             </div>
             <div class="flex flex-row gap-3 items-center">
                 <div class="cursor-pointer p-4 bg-primary-light rounded-md text-black" x-on:click="openStats = !openStats">
@@ -23,11 +46,13 @@ import OverviewChart from './OverviewChart.vue';
         <div class="w-full border-dark border-b pt-2" x-show="openStats" x-cloak transition></div>
         <div x-show="openStats" x-cloak transition>
             <div>
-                <OverviewChart />
+                <Doughnut :options="chartOptions" :data="chartData"/>
             </div>
             <p class="mt-3">
                 No stats to display
             </p>
         </div>
+    </div>
+    <div>
     </div>
 </template>

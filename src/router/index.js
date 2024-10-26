@@ -3,6 +3,7 @@ import Login from '../components/Login.vue'
 import Register from '../components/Register.vue'
 import Dashboard from '../components/Dashboard.vue'
 import Sites from '../components/Sites.vue'
+import Site from '../components/Site.vue'
 import Account from '../components/Account.vue'
 import CompanyRegister from '../components/CompanyRegister.vue'
 import Company from '../components/Company.vue'
@@ -25,7 +26,7 @@ const router = createRouter({
             component: Login,
             meta: {
                 title: 'Login Form - Track My Site',
-                full: true,
+                full: true
             },
         },
         {
@@ -34,7 +35,7 @@ const router = createRouter({
             component: Register,
             meta: {
                 title: 'Register Form - Track My Site',
-                full: true,
+                full: true
             }
         },
         {
@@ -43,7 +44,7 @@ const router = createRouter({
             component: CompanyRegister,
             meta: {
                 title: 'Register Company - Track My Site',
-                full: true,
+                full: true
             }
         },
         {
@@ -79,6 +80,19 @@ const router = createRouter({
                 breadcrumb: [
                     { name: 'Dashboard', link: '/' },
                     { name: 'Sites' }
+                ]
+            }
+        },
+        {
+            path: '/sites/:id',
+            name: 'site',
+            component: Site,
+            meta: {
+                title: 'Site - Track My Site',
+                breadcrumb: [
+                    { name: 'Dashboard', link: '/' },
+                    { name: 'Sites', link: '/sites' },
+                    { name: 'Site' }
                 ]
             }
         },
