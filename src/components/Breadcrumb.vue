@@ -8,7 +8,7 @@ const props = defineProps({
 </script>
 
 <template>
-    <div aria-label="breadcrumb">
+    <div aria-label="breadcrumb" v-if="breadcrumb">
         <ol class="breadcrumb flex flex-row gap-3">
             <li v-for="(item, index) in breadcrumb" :key="item.name" class="flex flex-row gap-3">
                 <a v-if="item.link" :href="item.link">{{ item.name }}</a>

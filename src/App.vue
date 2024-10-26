@@ -16,7 +16,7 @@ const route = useRoute()
     <div class="static w-full bg-light text-dark flex flex-col items-center border-b border-dark h-[134px] md:h-[102px]">
       <Header />
       <div class="relative container flex flex-col md:flex-row gap-3 items-center py-2">
-        <Breadcrumb class="w-full" :breadcrumb="route.meta.breadcrumb" />
+        <Breadcrumb v-if="route.meta.breadcrumb" class="w-full" :breadcrumb="route.meta.breadcrumb" />
         <SearchBar />
       </div>
     </div>
