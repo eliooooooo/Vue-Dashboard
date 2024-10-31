@@ -23,6 +23,9 @@ module.exports = {
         },
         'light': {
           'DEFAULT': '#F7F7F7'
+        },
+        'gray': {
+          'light': '#ededed',
         }
       },
     },

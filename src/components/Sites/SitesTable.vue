@@ -59,7 +59,7 @@ const removeSite = (id) => {
                     </tr>
                 </thead>
                 <tbody>
-                    <SiteRow v-for="site in sites" :key="site.id" :site="site" @remove-site="removeSite"/>
+                    <SiteRow v-for="site in sites" class="[&:nth-child(2n)]:bg-gray-light" :key="site.id" :site="site" @remove-site="removeSite"/>
                 </tbody>
             </table>
             <p class="mt-3" v-else>
