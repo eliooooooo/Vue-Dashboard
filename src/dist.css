@@ -1011,12 +1011,36 @@ select {
   top: 10rem;
 }
 
+.-bottom-20 {
+  bottom: -5rem;
+}
+
+.bottom-20 {
+  bottom: 5rem;
+}
+
+.-bottom-8 {
+  bottom: -2rem;
+}
+
+.-bottom-4 {
+  bottom: -1rem;
+}
+
+.right-4 {
+  right: 1rem;
+}
+
 .z-10 {
   z-index: 10;
 }
 
 .z-20 {
   z-index: 20;
+}
+
+.-z-10 {
+  z-index: -10;
 }
 
 .col-span-12 {
@@ -1244,6 +1268,10 @@ select {
   flex-shrink: 1;
 }
 
+.flex-shrink-0 {
+  flex-shrink: 0;
+}
+
 .flex-grow {
   flex-grow: 1;
 }
@@ -1338,6 +1366,14 @@ select {
 
 .gap-5 {
   gap: 1.25rem;
+}
+
+.self-end {
+  align-self: flex-end;
+}
+
+.self-center {
+  align-self: center;
 }
 
 .self-stretch {
@@ -1562,6 +1598,11 @@ select {
   padding-bottom: 0.25rem;
 }
 
+.py-12 {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
 .py-2 {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
@@ -1645,6 +1686,11 @@ select {
   line-height: 2.5rem;
 }
 
+.text-5xl {
+  font-size: 3rem;
+  line-height: 1;
+}
+
 .text-lg {
   font-size: 1.125rem;
   line-height: 1.75rem;
@@ -1721,12 +1767,25 @@ select {
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
+.text-primary-light {
+  --tw-text-opacity: 1;
+  color: rgb(255 232 232 / var(--tw-text-opacity));
+}
+
 .underline {
   text-decoration-line: underline;
 }
 
 .no-underline {
   text-decoration-line: none;
+}
+
+.opacity-30 {
+  opacity: 0.3;
+}
+
+.opacity-50 {
+  opacity: 0.5;
 }
 
 .outline {
@@ -1882,6 +1941,10 @@ a:not(.btn):hover {
 .\[\&\:nth-child\(2n\)\]\:bg-gray-light:nth-child(2n) {
   --tw-bg-opacity: 1;
   background-color: rgb(237 237 237 / var(--tw-bg-opacity));
+}
+
+.\[\&\>\*\]\:w-full>* {
+  width: 100%;
 }
 
 .\[\&\>div\>input\]\:rounded-md>div>input {
