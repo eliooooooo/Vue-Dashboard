@@ -3,6 +3,7 @@ import SitesNewVisits from './Sites/SitesNewVisits.vue';
 import SitesNumber from './Sites/SitesNumber.vue';
 import SitesTable from './Sites/SitesTable.vue';
 import SitesVisits from './Sites/SitesVisits.vue';
+import SitesVisitsTable from './Sites/SitesVisitsTable.vue';
 </script>
 
 <template>
@@ -13,5 +14,6 @@ import SitesVisits from './Sites/SitesVisits.vue';
             <SitesNewVisits />
         </div>
         <SitesTable />
+        <SitesVisitsTable />
     </div>
 </template>
