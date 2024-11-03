@@ -3,8 +3,8 @@ import { ref, watch } from 'vue'
 import VisitsRow from './VisitsRow.vue';
 
 const visits = ref([
-    { id: 1, name: 'Google', url: 'https://www.google.com', key: 'abcdefghijklmnopqrstuvwxyz' },
-    { id: 2, name: 'Facebook', url: 'https://www.facebook.com', key: 'abcdefghijklmnopqrstuvwxyz' }
+    { id: 1, name: 'Google', page: 'index.html', source: 'FB', campaign: 'lancement', content: 'content', term:'google, search', medium:'email', language: 'fr', platform: 'Chrome'  },
+    { id: 2, name: 'Facebook', page: 'index.html', source: 'META', campaign: 'lancement', content: 'content', term:'google, search', medium:'email', language: 'fr', platform: 'Chrome'  },
 ])
 
 let displayVisits = localStorage.getItem('displayVisits');
@@ -60,7 +60,7 @@ watch(displayVisits, (newVal) => {
         <div class="flex flex-row gap-4 py-2" x-show="openVisitsParams">
             <div v-for="displayVisit in displayVisits" class="flex flex-row items-center gap-2">
                 <input type="checkbox" :name="displayVisit.name" :id="displayVisit.name" v-model="displayVisit.display" >
-                <label :for="displayVisit.name">{{ displayVisit.name }}</label>
+                <label :for="displayVisit.name">{{ displayVisit.name[0].toUpperCase() + displayVisit.name.slice(1) }}</label>
             </div>
         </div>
         <div class="w-full border-dark border-b pt-2" x-show="openVisits" x-cloak transition></div>
@@ -71,7 +71,7 @@ watch(displayVisits, (newVal) => {
                         <th class="w-1">Id</th>
                         <th>Site</th>
                         <th>Page</th>
-                        <th v-for="displayVisit in displayVisits" v-show="displayVisit.display"><span>{{ displayVisit.name }}</span></th>
+                        <th v-for="displayVisit in displayVisits" v-show="displayVisit.display"><span>{{ displayVisit.name[0].toUpperCase() + displayVisit.name.slice(1) }}</span></th>
                         <th class="w-1">Data</th>
                         <th class="w-10">Actions</th>
                     </tr>
