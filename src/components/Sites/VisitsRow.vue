@@ -4,6 +4,10 @@ const props = defineProps({
     visit: {
         type: Object,
         required: true
+    },
+    visitDisplay: {
+        type: Object,
+        required: true
     }
 })
 </script>
