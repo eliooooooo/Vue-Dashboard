@@ -43,7 +43,7 @@ export default {
                 </div>
             </div>
         </div>
-        <div class="w-full border-dark border-b pt-2" x-show="openStats" x-cloak transition></div>
+        <div class="w-full border-dark border-b pt-2" x-cloak transition></div>
         <div x-show="openStats" x-cloak transition>
             <div>
                 <Line :options="chartOptions" :data="chartData"/>

@@ -72,20 +72,21 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="border border-dark p-4 rounded-md flex flex-col">
-    <div class="flex flex-row justify-between items-center mb-4">
-      <div>
-        <h1>Visits</h1>
-        <p>Your website overall visits tracker</p>
-      </div>
-      <div>
-        <select v-model="selectedPeriod">
-          <option value="weekly">Weekly</option>
-          <option value="monthly">Monthly</option>
-          <option value="yearly">Yearly</option>
-        </select>
-      </div>
+    <div class="border border-dark p-4 rounded-md flex flex-col">
+        <div class="flex flex-row justify-between items-center">
+            <div>
+                <h1>Visits</h1>
+                <p>Your website overall visits tracker</p>
+            </div>
+            <div>
+                <select v-model="selectedPeriod">
+                    <option value="weekly">Weekly</option>
+                    <option value="monthly">Monthly</option>
+                    <option value="yearly">Yearly</option>
+                </select>
+            </div>
+        </div>
+        <div class="w-full border-dark border-b pt-2" x-cloak transition></div>
+        <Line :data="chartData" :options="chartOptions" />
     </div>
-    <Line :data="chartData" :options="chartOptions" />
-  </div>
 </template>
