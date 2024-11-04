@@ -11,7 +11,7 @@ import VisitsChart from './Sites/VisitsChart.vue';
         <SiteHeader class="col-span-12" />
         <VisitsChart class="col-span-8" />
         <LocationChart class="col-span-4" />
-        <SitesVisitsTable class="col-span-12" />
+        <SitesVisitsTable class="col-span-12" :site-cell="false"/>
     </div>
     <PagesTable />
 </template>

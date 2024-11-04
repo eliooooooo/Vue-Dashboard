@@ -2,6 +2,13 @@
 import { ref, watch } from 'vue'
 import VisitsRow from './VisitsRow.vue';
 
+const props = defineProps({
+    siteCell: {
+        type: Boolean,
+        default: true
+    }
+});
+
 const visits = ref([
     { id: 1, name: 'Google', page: 'index.html', source: 'FB', campaign: 'lancement', content: 'content', term:'google, search', medium:'email', language: 'fr', platform: 'Chrome'  },
     { id: 2, name: 'Facebook', page: 'index.html', source: 'META', campaign: 'lancement', content: 'content', term:'google, search', medium:'email', language: 'fr', platform: 'Chrome'  },
@@ -45,7 +52,7 @@ watch(displayVisits, (newVal) => {
         <div class="flex flex-row justify-between items-center">
             <div>
                 <h1>Last visits</h1>
-                <p>Here are the last visits of your websites</p>
+                <p>Here are the last visits of your website<span v-if="props.siteCell" >s</span></p>
             </div>
             <div class="flex flex-row gap-3 items-center">
                 <div class="cursor-pointer p-4 bg-primary-light rounded-md text-black" x-on:click="openVisits = !openVisits">
@@ -70,7 +77,7 @@ watch(displayVisits, (newVal) => {
                 <thead class="bg-primary-light border border-primary-light">
                     <tr class="[&>th]:text-left [&>th]:p-1 [&>th]:px-2 border-primary-light">
                         <th class="w-1">Id</th>
-                        <th>Site</th>
+                        <th v-if="props.siteCell">Site</th>
                         <th>Page</th>
                         <th v-for="displayVisit in displayVisits" v-show="displayVisit.display"><span>{{ displayVisit.name[0].toUpperCase() + displayVisit.name.slice(1) }}</span></th>
                         <th class="w-1">Data</th>
@@ -78,7 +85,7 @@ watch(displayVisits, (newVal) => {
                     </tr>
                 </thead>
                 <tbody>
-                    <VisitsRow v-for="visit in visits" class="[&:nth-child(2n)]:bg-gray-light" :key="visit.id" :visit="visit" :visitDisplay="displayVisits"/>
+                    <VisitsRow v-for="visit in visits" class="[&:nth-child(2n)]:bg-gray-light" :key="visit.id" :visit="visit" :visitDisplay="displayVisits" :siteCell="props.siteCell"/>
                 </tbody>
             </table>
             <p class="mt-3" v-else>
