@@ -22,7 +22,7 @@ if (displayVisits) {
         { name: 'campaign', display: true },
         { name: 'medium', display: true },
         { name: 'content', display: true },
-        { name: 'terms', display: true },
+        { name: 'term', display: true },
         { name: 'platform', display: true },
         { name: 'language', display: false }
     ]);

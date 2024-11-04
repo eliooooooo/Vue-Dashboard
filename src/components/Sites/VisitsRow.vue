@@ -23,13 +23,7 @@ const props = defineProps({
                 <path fill-rule="evenodd" d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0z"/>
             </svg>
         </a></td>
-        <td>{{ visit.source }}</td>
-        <td>{{ visit.campaign }}</td>
-        <td>{{ visit.content }}</td>
-        <td>{{ visit.term }}</td>
-        <td>{{ visit.medium }}</td>
-        <td>{{ visit.language }}</td>
-        <td>{{ visit.platform }}</td>
+        <td v-for="visitDisplayElement in visitDisplay" v-show="visitDisplayElement.display" >{{ visit[visitDisplayElement.name] }}</td>
         <td>
             <router-link to="/sites/1">View</router-link>
         </td>
