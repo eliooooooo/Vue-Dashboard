@@ -3,15 +3,15 @@
 
 <template>
     <div class="border border-dark p-4 rounded-md flex flex-col gap-4 h-fit" >
-        <h2>Sites ranking</h2>
-        <p>Here are the top sites you are tracking, ranked by visits</p>
+        <h2>Campaign ranking</h2>
+        <p>Here are the top campaigns you are tracking, ranked by visits</p>
         <div class="border-dark border-b w-full" ></div>
         <div class="flex flex-col">
             <div class="flex flex-row gap-4 items-end p-2">
                 <span class="text-primary text-2xl font-bold">1.</span>
                 <div class="flex flex-row justify-between items-center w-full">
                     <div class="flex flex-col">
-                        <span class="text-xl font-bold">Google</span>
+                        <span class="text-xl font-bold">Lancement MLE (Google)</span>
                         <span>300k views</span>
                     </div>
                     <div class="flex flex-row h-full items-center">
@@ -26,7 +26,7 @@
                 <span class="text-primary text-2xl font-bold">2.</span>
                 <div class="flex flex-row justify-between items-center w-full">
                     <div class="flex flex-col flex-1">
-                        <span class="text-xl font-bold">Facebook</span>
+                        <span class="text-xl font-bold">Relance (Github)</span>
                         <span>260k views</span>
                     </div>
                     <div class="flex flex-row h-full items-center">
@@ -40,7 +40,7 @@
                 <span class="text-primary text-2xl font-bold">3.</span>
                 <div class="flex flex-row justify-between items-center w-full">
                     <div class="flex flex-col">
-                        <span class="text-xl font-bold">Github</span>
+                        <span class="text-xl font-bold">Fidélisation (Facebook)</span>
                         <span>200k views</span>
                     </div>
                     <div class="flex flex-row h-full items-center">

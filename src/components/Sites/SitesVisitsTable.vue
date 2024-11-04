@@ -58,9 +58,9 @@ watch(displayVisits, (newVal) => {
                 <label :for="displayVisit.name">{{ displayVisit.name[0].toUpperCase() + displayVisit.name.slice(1) }}</label>
             </div>
         </div>
-        <div class="w-full border-dark border-b pt-2" x-show="openVisits" x-cloak transition></div>
-        <div x-show="openVisits" x-cloak transition>
-            <table class="w-full mt-3" v-if="visits.length >= 1">
+        <div class="w-full border-dark border-b pt-2 mb-3" x-show="openVisits" x-cloak transition></div>
+        <div x-show="openVisits" class="overflow-auto max-h-[450px]" x-cloak transition>
+            <table class="w-full" v-if="visits.length >= 1">
                 <thead class="bg-primary-light border border-primary-light">
                     <tr class="[&>th]:text-left [&>th]:p-1 [&>th]:px-2 border-primary-light">
                         <th class="w-1">Id</th>
