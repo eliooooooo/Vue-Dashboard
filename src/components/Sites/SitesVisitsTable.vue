@@ -5,6 +5,12 @@ import VisitsRow from './VisitsRow.vue';
 const visits = ref([
     { id: 1, name: 'Google', page: 'index.html', source: 'FB', campaign: 'lancement', content: 'content', term:'google, search', medium:'email', language: 'fr', platform: 'Chrome'  },
     { id: 2, name: 'Facebook', page: 'index.html', source: 'META', campaign: 'lancement', content: 'content', term:'google, search', medium:'email', language: 'fr', platform: 'Chrome'  },
+    { id: 4, name: 'LinkedIn', page: 'index.html', source: 'LI', campaign: 'lancement', content: 'content', term:'linkedin, search', medium:'social', language: 'en', platform: 'Safari'  },
+    { id: 3, name: 'Twitter', page: 'index.html', source: 'TW', campaign: 'lancement', content: 'content', term:'twitter, search', medium:'social', language: 'en', platform: 'Firefox'  },
+    { id: 1, name: 'Google', page: 'index.html', source: 'FB', campaign: 'lancement', content: 'content', term:'google, search', medium:'email', language: 'fr', platform: 'Chrome'  },
+    { id: 1, name: 'Google', page: 'index.html', source: 'FB', campaign: 'lancement', content: 'content', term:'google, search', medium:'email', language: 'fr', platform: 'Chrome'  },
+    { id: 4, name: 'LinkedIn', page: 'index.html', source: 'LI', campaign: 'lancement', content: 'content', term:'linkedin, search', medium:'social', language: 'en', platform: 'Safari'  },
+    { id: 5, name: 'Instagram', page: 'index.html', source: 'IG', campaign: 'lancement', content: 'content', term:'instagram, search', medium:'social', language: 'fr', platform: 'Edge'  }
 ])
 
 let displayVisits = localStorage.getItem('displayVisits');

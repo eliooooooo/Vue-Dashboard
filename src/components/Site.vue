@@ -2,14 +2,16 @@
 import SiteHeader from './Sites/SiteHeader.vue';
 import PagesTable from './Sites/PagesTable.vue';
 import LocationChart from './Sites/LocationChart.vue';
-import SourcesChart from './Sites/SourcesChart.vue';
+import SitesVisitsTable from './Sites/SitesVisitsTable.vue';
+import VisitsChart from './Sites/VisitsChart.vue';
 </script>
 
 <template>
-    <div class="flex flex-col gap-4">
-        <SiteHeader />
-        <PagesTable />
-        <SourcesChart />
-        <LocationChart />
+    <div class="grid grid-cols-12 gap-4">
+        <SiteHeader class="col-span-12" />
+        <VisitsChart class="col-span-8" />
+        <LocationChart class="col-span-4" />
+        <SitesVisitsTable class="col-span-12" />
     </div>
+    <PagesTable />
 </template>

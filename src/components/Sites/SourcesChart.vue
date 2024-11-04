@@ -10,7 +10,7 @@ export default {
     data() {
         return {
             chartData: {
-                labels: ['France', 'Allemagne', 'Italie'],
+                labels: ['META', 'FB', 'Site'],
                 datasets: [{ data: [40, 20, 12] }]
             },
             chartOptions: {
@@ -48,11 +48,9 @@ export default {
             <div>
                 <Line :options="chartOptions" :data="chartData"/>
             </div>
-            <p class="mt-3">
+            <!-- <p class="mt-3">
                 No stats to display
-            </p>
+            </p> -->
         </div>
-    </div>
-    <div>
     </div>
 </template>
