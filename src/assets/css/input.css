@@ -1,0 +1,16 @@
+input[type="checkbox"] {
+    @apply appearance-none;
+    &:checked {
+        @apply bg-primary;
+        &:focus {
+            @apply outline-primary bg-primary;
+        }
+
+        &:hover {
+            @apply bg-primary-dark;
+        }
+    }
+    &:focus {
+        @apply outline-primary;
+    }
+}

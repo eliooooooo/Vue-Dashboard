@@ -54,7 +54,7 @@ watch(displayVisits, (newVal) => {
         </div>
         <div class="flex flex-row gap-4 py-2" x-show="openVisits" >
             <div v-for="displayVisit in displayVisits" class="flex flex-row items-center gap-2">
-                <input type="checkbox" :name="displayVisit.name" :id="displayVisit.name" v-model="displayVisit.display" >
+                <input type="checkbox" :name="displayVisit.name" :id="displayVisit.name" v-model="displayVisit.display">
                 <label :for="displayVisit.name">{{ displayVisit.name[0].toUpperCase() + displayVisit.name.slice(1) }}</label>
             </div>
         </div>
