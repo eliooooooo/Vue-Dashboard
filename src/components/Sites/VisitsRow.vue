@@ -28,7 +28,6 @@ const props = defineProps({
             <router-link to="/sites/1">View</router-link>
         </td>
         <td class="flex flex-row gap-2 border-none">
-            <button class="btn small primary">Edit</button>
             <button class="btn small secondary">Delete</button>
         </td>
     </tr>

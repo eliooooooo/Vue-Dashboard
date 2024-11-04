@@ -35,18 +35,13 @@ watch(displayVisits, (newVal) => {
 </script>
 
 <template>
-    <div class="border border-dark p-4 rounded-md flex flex-col" x-data="{ openVisits: true, openVisitsParams: false }">
+    <div class="border border-dark p-4 rounded-md flex flex-col" x-data="{ openVisits: true }">
         <div class="flex flex-row justify-between items-center">
             <div>
                 <h1>Last visits</h1>
                 <p>Here are the last visits of your websites</p>
             </div>
             <div class="flex flex-row gap-3 items-center">
-                <div class="p-4 rounded-md bg-primary cursor-pointer" x-on:click="openVisitsParams = !openVisitsParams">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
-                        <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
-                    </svg>
-                </div>
                 <div class="cursor-pointer p-4 bg-primary-light rounded-md text-black" x-on:click="openVisits = !openVisits">
                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16" x-show="!openVisits">
                         <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
@@ -57,7 +52,7 @@ watch(displayVisits, (newVal) => {
                 </div>
             </div>
         </div>
-        <div class="flex flex-row gap-4 py-2" x-show="openVisitsParams">
+        <div class="flex flex-row gap-4 py-2" x-show="openVisits" >
             <div v-for="displayVisit in displayVisits" class="flex flex-row items-center gap-2">
                 <input type="checkbox" :name="displayVisit.name" :id="displayVisit.name" v-model="displayVisit.display" >
                 <label :for="displayVisit.name">{{ displayVisit.name[0].toUpperCase() + displayVisit.name.slice(1) }}</label>
