@@ -14,3 +14,15 @@ input[type="checkbox"] {
         @apply outline-primary;
     }
 }
+
+select {
+    @apply appearance-none outline-primary;
+    &:focus {
+        @apply outline-primary;
+    }
+}
+
+select:focus {
+    @apply !border-primary;
+    --tw-ring-color: #FF5733 !important;
+}

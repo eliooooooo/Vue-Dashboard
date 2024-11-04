@@ -146,6 +146,48 @@ h2,
   outline-color: #FF6363;
 }
 
+input[type="checkbox"] {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  &:checked {
+    --tw-bg-opacity: 1;
+    background-color: rgb(255 99 99 / var(--tw-bg-opacity));
+  }
+  &:checked {
+    &:focus {
+      --tw-bg-opacity: 1;
+      background-color: rgb(255 99 99 / var(--tw-bg-opacity));
+    }
+    &:focus {
+      outline-color: #FF6363;
+    }
+    &:hover {
+      --tw-bg-opacity: 1;
+      background-color: rgb(156 6 6 / var(--tw-bg-opacity));
+    }
+  }
+  &:focus {
+    outline-color: #FF6363;
+  }
+}
+
+select {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  outline-color: #FF6363;
+  &:focus {
+    outline-color: #FF6363;
+  }
+}
+
+select:focus {
+  --tw-border-opacity: 1 !important;
+  border-color: rgb(255 99 99 / var(--tw-border-opacity)) !important;
+  --tw-ring-color: #FF5733 !important;
+}
+
 *, ::before, ::after {
   --tw-border-spacing-x: 0;
   --tw-border-spacing-y: 0;
@@ -1059,6 +1101,10 @@ select {
   grid-column: span 5 / span 5;
 }
 
+.col-span-6 {
+  grid-column: span 6 / span 6;
+}
+
 .col-span-7 {
   grid-column: span 7 / span 7;
 }
@@ -1100,6 +1146,14 @@ select {
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
+}
+
+.mb-3 {
+  margin-bottom: 0.75rem;
+}
+
+.mb-4 {
+  margin-bottom: 1rem;
 }
 
 .ml-auto {
@@ -1219,6 +1273,10 @@ select {
   height: 100vh;
 }
 
+.max-h-\[450px\] {
+  max-height: 450px;
+}
+
 .min-h-full {
   min-height: 100%;
 }
@@ -1290,6 +1348,18 @@ select {
 
 .resize {
   resize: both;
+}
+
+.\!appearance-none {
+  -webkit-appearance: none !important;
+     -moz-appearance: none !important;
+          appearance: none !important;
+}
+
+.appearance-none {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
 }
 
 .auto-cols-auto {
@@ -1378,6 +1448,10 @@ select {
 
 .self-stretch {
   align-self: stretch;
+}
+
+.overflow-auto {
+  overflow: auto;
 }
 
 .overflow-hidden {
@@ -1790,6 +1864,19 @@ select {
 
 .outline {
   outline-style: solid;
+}
+
+.\!outline-primary {
+  outline-color: #FF6363 !important;
+}
+
+.outline-primary {
+  outline-color: #FF6363;
+}
+
+.drop-shadow {
+  --tw-drop-shadow: drop-shadow(0 1px 2px rgb(0 0 0 / 0.1)) drop-shadow(0 1px 1px rgb(0 0 0 / 0.06));
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 
 .filter {
