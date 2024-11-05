@@ -29,7 +29,7 @@ const props = defineProps({
         </a></td>
         <td v-for="visitDisplayElement in visitDisplay" v-show="visitDisplayElement.display" >{{ visit[visitDisplayElement.name] }}</td>
         <td>
-            <router-link to="/sites/1">View</router-link>
+            <router-link to="/visit/1">View</router-link>
         </td>
         <td class="flex flex-row gap-2 border-none">
             <button class="btn small secondary">Delete</button>

@@ -4,7 +4,7 @@ import Register from '../components/Register.vue'
 import Dashboard from '../components/Dashboard.vue'
 import Sites from '../components/Sites.vue'
 import Site from '../components/Site.vue'
-import Stats from '../components/Stats.vue'
+import Visit from '../components/Visit.vue'
 import Account from '../components/Account.vue'
 import CompanyRegister from '../components/CompanyRegister.vue'
 import Company from '../components/Company.vue'
@@ -98,15 +98,16 @@ const router = createRouter({
             }
         },
         {
-            path: '/stats/:id',
-            name: 'stats',
-            component: Stats,
+            path: '/visit/:id',
+            name: 'visit',
+            component: Visit,
             meta: {
-                title: 'Stats - Track My Site',
+                title: 'Visit - Track My Site',
                 breadcrumb: [
                     { name: 'Dashboard', link: '/' },
                     { name: 'Sites', link: '/sites' },
-                    { name: 'Stats' }
+                    { name: 'Site', link: '/sites/:id' },
+                    { name: 'Visit' }
                 ]
             }
         },
