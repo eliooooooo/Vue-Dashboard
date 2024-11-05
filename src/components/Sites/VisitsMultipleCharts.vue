@@ -18,6 +18,8 @@ const chartElement = ref([
 
 const selectedChartOption = ref('page')
 
+const maxElements = ref(null)
+
 // Déclaration des variables réactives
 const selectedPeriod = ref('monthly')
 const chartData = ref({
@@ -68,6 +70,12 @@ const updateChartData = () => {
     const sortedLabels = combined.map(item => item.label)
     const sortedData = combined.map(item => item.data)
 
+    // Limiter le nombre d'éléments
+    if (maxElements.value) {
+        sortedLabels.splice(maxElements.value)
+        sortedData.splice(maxElements.value)
+    }
+
     // Mettre à jour chartData
     chartData.value = {
         labels: sortedLabels,
@@ -91,6 +99,10 @@ watch(selectedChartOption, () => {
     chartData.value.datasets[0].label = chartElement.value.find(element => element.name === selectedChartOption.value).value
 })
 
+watch(maxElements, () => {
+    updateChartData()
+})
+
 onMounted(() => {
     updateChartData()
 })
@@ -106,18 +118,24 @@ onMounted(() => {
                 </div>
             </div>
             <div class="w-full border-dark border-b pt-2 mb-3" x-cloak transition></div>
-            <div>
-                <select v-model="selectedPeriod">
+            <div class="flex flex-col">
+                <label for="period">Period :</label>
+                <select id="period" v-model="selectedPeriod">
                     <option value="weekly">Weekly</option>
                     <option value="monthly">Monthly</option>
                     <option value="yearly">Yearly</option>
                 </select>
             </div>
-            <div class="flex flex-col">
-                <div v-for="element in chartElement" :key="element.id" class="flex flex-row gap-2 items-center">
+            <label for="chartOption" class="pt-2">Chart option :</label>
+            <div class="grid grid-cols-12 pb-2">
+                <div v-for="element in chartElement" :key="element.id" class="col-span-6">
                     <input type="radio" name="chartOption" :id="element.id" :value="element.name" v-model="selectedChartOption">
-                    <label :for="element.id">{{ element.value }}</label>
+                    <label :for="element.id" class="pl-2">{{ element.value }}</label>
                 </div>
+            </div>
+            <div class="flex flex-col">
+                <label for="number">Max elements :</label>
+                <input type="number" placeholder="Enter a number" v-model="maxElements" />
             </div>
         </div>
         <div class=" col-span-8 border border-dark p-4 rounded-md flex flex-col">

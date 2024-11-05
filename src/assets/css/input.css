@@ -26,3 +26,25 @@ select:focus {
     @apply !border-primary;
     --tw-ring-color: #FF5733 !important;
 }
+
+input[type="radio"] {
+    @apply appearance-none;
+    &:checked {
+        @apply bg-primary;
+        &:focus {
+            @apply outline-primary bg-primary;
+        }
+
+        &:hover {
+            @apply bg-primary-dark;
+        }
+    }
+    &:focus {
+        @apply outline-primary;
+    }
+}
+
+input:focus {
+    @apply !border-primary;
+    --tw-ring-color: #FF5733 !important;
+}
