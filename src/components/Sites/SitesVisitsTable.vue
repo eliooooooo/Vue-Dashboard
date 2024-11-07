@@ -6,6 +6,14 @@ const props = defineProps({
     siteCell: {
         type: Boolean,
         default: true
+    },
+    title: {
+        type: String,
+        default: null
+    },
+    desc: {
+        type: String,
+        default: null
     }
 });
 
