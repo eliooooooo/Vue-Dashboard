@@ -2,6 +2,7 @@
 import { ref, watch, onMounted } from 'vue'
 import { Line } from 'vue-chartjs'
 import { Chart as ChartJS, Title, Tooltip, Legend, LineElement, PointElement, CategoryScale, LinearScale } from 'chart.js'
+import ContainerSimple from './../ContainerSimple.vue'
 
 ChartJS.register(Title, Tooltip, Legend, LineElement, PointElement, CategoryScale, LinearScale)
 
@@ -19,24 +20,21 @@ const chartData = ref({
 })
 const chartOptions = ref({ responsive: true })
 
-// Référence au composant Line
-const lineChartRef = ref(null)
-
 // Fonction pour mettre à jour les données du graphique
 const updateChartData = () => {
     if (selectedPeriod.value === 'weekly') {
-    chartData.value = {
-        labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
-        datasets: [
-            {
-                label: 'Visits',
-                data: [1500, 2000, 1800, 2200],
-                backgroundColor: 'rgba(75, 192, 192, 0.2)',
-                borderColor: 'rgba(75, 192, 192, 1)',
-                borderWidth: 1
-            }
-        ]
-    }
+        chartData.value = {
+            labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
+            datasets: [
+                {
+                    label: 'Visits',
+                    data: [1500, 2000, 1800, 2200],
+                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 1
+                }
+            ]
+        }
     } else if (selectedPeriod.value === 'monthly') {
         chartData.value = {
             labels: [ '01/11/2023','01/12/2023','01/01/2024','01/02/2024','01/03/2024','01/04/2024','01/05/2024','01/06/2024','01/07/2024','01/08/2024','01/09/2024','01/10/2024'],
@@ -62,31 +60,14 @@ const updateChartData = () => {
     }
 }
 
-watch(selectedPeriod, () => {
+const listener = (data) => {
+    selectedPeriod.value = data
     updateChartData()
-})
-
-onMounted(() => {
-    updateChartData()
-})
+}
 </script>
 
 <template>
-    <div class="border border-dark p-4 rounded-md flex flex-col">
-        <div class="flex flex-row justify-between items-center">
-            <div>
-                <h1>Visits</h1>
-                <p>Your website overall visits tracker</p>
-            </div>
-            <div>
-                <select v-model="selectedPeriod">
-                    <option value="weekly">Weekly</option>
-                    <option value="monthly">Monthly</option>
-                    <option value="yearly">Yearly</option>
-                </select>
-            </div>
-        </div>
-        <div class="w-full border-dark border-b pt-2" x-cloak transition></div>
+    <ContainerSimple title="Visits" desc="Your website overall visits tracker" :period="true" @updateChartData="listener">
         <Line :data="chartData" :options="chartOptions" />
-    </div>
+    </ContainerSimple>
 </template>
