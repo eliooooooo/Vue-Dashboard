@@ -64,6 +64,10 @@ const listener = (data) => {
     selectedPeriod.value = data
     updateChartData()
 }
+
+onMounted(() => {
+    updateChartData()
+})
 </script>
 
 <template>

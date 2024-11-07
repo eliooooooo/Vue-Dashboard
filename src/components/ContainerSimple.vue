@@ -37,7 +37,7 @@ const emit = defineEmits(['updateChartData']);
 
 if (props.period) {
     onMounted(() => {
-        emit('updateChartData', selectedPeriod)
+        emit('updateChartData', selectedPeriod.value)
     })
 }
 
