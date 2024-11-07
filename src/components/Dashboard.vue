@@ -1,8 +1,8 @@
 <script setup>
 import SitesTable from './Sites/SitesTable.vue';
-import SitesStats from './Sites/SitesStats.vue';
 import SitesRanking from './Sites/SitesRanking.vue';
 import CampaignRanking from './Sites/CampaignRanking.vue';
+import OverviewChart from './Sites/OverviewChart.vue';
 </script>
 
 <template>
@@ -11,6 +11,6 @@ import CampaignRanking from './Sites/CampaignRanking.vue';
         <!-- <SitesTable class="col-span-9" /> -->
         <CampaignRanking class="col-span-6" />
         <SitesRanking class="col-span-6" />
-        <SitesStats class="col-span-12" />
+        <OverviewChart class="col-span-12" />
     </div>
 </template>

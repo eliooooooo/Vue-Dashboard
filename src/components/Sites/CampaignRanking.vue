@@ -1,11 +1,10 @@
 <script setup>
+import ContainerSimple from './../ContainerSimple.vue';
+
 </script>
 
 <template>
-    <div class="border border-dark p-4 rounded-md flex flex-col gap-4 h-fit" >
-        <h2>Campaign ranking</h2>
-        <p>Here are the top campaigns you are tracking, ranked by visits</p>
-        <div class="border-dark border-b w-full" ></div>
+    <ContainerSimple title="Campaign ranking" desc="Here are the top campaigns you are tracking, ranked by visits">
         <div class="flex flex-col">
             <div class="flex flex-row gap-4 items-end p-2">
                 <span class="text-primary text-2xl font-bold">1.</span>
@@ -52,5 +51,5 @@
                 </div>
             </div>
         </div>
-    </div>
+    </ContainerSimple>
 </template>

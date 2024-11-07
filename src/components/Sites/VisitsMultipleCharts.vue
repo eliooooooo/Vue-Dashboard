@@ -2,6 +2,7 @@
 import { ref, watch, onMounted } from 'vue'
 import { Bar } from 'vue-chartjs'
 import { Chart as ChartJS, Title, Tooltip, Legend } from 'chart.js'
+import ContainerSimple from '../ContainerSimple.vue';
 
 ChartJS.register(Title, Tooltip, Legend)
 
@@ -245,14 +246,7 @@ onMounted(() => {
 
 <template>
     <div class="grid grid-cols-12 gap-4">
-        <div class=" col-span-4 border border-dark p-4 rounded-md flex flex-col">
-            <div class="flex flex-row justify-between items-center">
-                <div>
-                    <h1>Custom your chart</h1>
-                    <p>Select the output you want to see</p>
-                </div>
-            </div>
-            <div class="w-full border-dark border-b pt-2 mb-3" x-cloak transition></div>
+        <ContainerSimple title="Custom your chart" desc="Select the output you want to see" class="col-span-4">
             <div class="flex flex-col">
                 <label for="period">Period :</label>
                 <select id="period" v-model="selectedPeriod">
@@ -272,16 +266,9 @@ onMounted(() => {
                 <label for="number">Max elements :</label>
                 <input type="number" placeholder="Enter a number" v-model="maxElements" />
             </div>
-        </div>
-        <div class=" col-span-8 border border-dark p-4 rounded-md flex flex-col">
-            <div class="flex flex-row justify-between items-center">
-                <div>
-                    <h1>{{ chartElement.find(element => element.name === selectedChartOption).value }}</h1>
-                    <p>placeholder</p>
-                </div>
-            </div>
-            <div class="w-full border-dark border-b pt-2 mb-3" x-cloak transition></div>
+        </ContainerSimple>
+        <ContainerSimple :title="chartElement.find(element => element.name === selectedChartOption).value" desc="placeholder" class="col-span-8">
             <Bar :data="chartData" :options="chartOptions" />
-        </div>
+        </ContainerSimple>
     </div>
 </template>

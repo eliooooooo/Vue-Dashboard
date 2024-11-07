@@ -1,21 +1,16 @@
 <script setup>
 import { ref, watch } from 'vue'
 import VisitsRow from './VisitsRow.vue';
+import ContainerSimple from './../ContainerSimple.vue';
 
 const props = defineProps({
     siteCell: {
         type: Boolean,
         default: true
-    },
-    title: {
-        type: String,
-        default: null
-    },
-    desc: {
-        type: String,
-        default: null
     }
 });
+
+const description = `Here are the last visits of your website${props.siteCell ? 's' : ''}`;
 
 const visits = ref([
     { id: 1, name: 'Google', page: 'index.html', source: 'FB', campaign: 'lancement', content: 'content', term:'google, search', medium:'email', language: 'fr', platform: 'Chrome'  },
@@ -53,52 +48,24 @@ if (displayVisits) {
 watch(displayVisits, (newVal) => {
     localStorage.setItem('displayVisits', JSON.stringify(newVal));
 }, { deep: true });
-</script>
 
+</script>
 <template>
-    <div class="border border-dark p-4 rounded-md flex flex-col" x-data="{ openVisits: true }">
-        <div class="flex flex-row justify-between items-center">
-            <div>
-                <h1>Last visits</h1>
-                <p>Here are the last visits of your website<span v-if="props.siteCell" >s</span></p>
-            </div>
-            <div class="flex flex-row gap-3 items-center">
-                <div class="cursor-pointer p-4 bg-primary-light rounded-md text-black" x-on:click="openVisits = !openVisits">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16" x-show="!openVisits">
-                        <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
-                    </svg>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-chevron-up" viewBox="0 0 16 16" x-show="openVisits">
-                        <path fill-rule="evenodd" d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708z"/>
-                    </svg>
-                </div>
-            </div>
-        </div>
-        <div class="flex flex-row gap-4 py-2" x-show="openVisits" >
-            <div v-for="displayVisit in displayVisits" class="flex flex-row items-center gap-2">
-                <input type="checkbox" :name="displayVisit.name" :id="displayVisit.name" v-model="displayVisit.display">
-                <label :for="displayVisit.name">{{ displayVisit.name[0].toUpperCase() + displayVisit.name.slice(1) }}</label>
-            </div>
-        </div>
-        <div class="w-full border-dark border-b pt-2 mb-3" x-show="openVisits" x-cloak transition></div>
-        <div x-show="openVisits" class="overflow-auto max-h-[450px]" x-cloak transition>
-            <table class="w-full" v-if="visits.length >= 1">
-                <thead class="bg-primary-light border border-primary-light">
-                    <tr class="[&>th]:text-left [&>th]:p-1 [&>th]:px-2 border-primary-light">
-                        <th class="w-1">Id</th>
-                        <th v-if="props.siteCell">Site</th>
-                        <th>Page</th>
-                        <th v-for="displayVisit in displayVisits" v-show="displayVisit.display"><span>{{ displayVisit.name[0].toUpperCase() + displayVisit.name.slice(1) }}</span></th>
-                        <th class="w-1">Data</th>
-                        <th class="w-10">Actions</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <VisitsRow v-for="visit in visits" class="[&:nth-child(2n)]:bg-gray-light" :key="visit.id" :visit="visit" :visitDisplay="displayVisits" :siteCell="props.siteCell"/>
-                </tbody>
-            </table>
-            <p class="mt-3" v-else>
-                No visits to display
-            </p>
-        </div>
-    </div>
+    <ContainerSimple title="Last visits" :desc="description" :fixedHeight="true" :displayVisits="displayVisits" :toggle="true">
+        <table class="w-full" v-if="visits.length >= 1">
+            <thead class="bg-primary-light border border-primary-light">
+                <tr class="[&>th]:text-left [&>th]:p-1 [&>th]:px-2 border-primary-light">
+                    <th class="w-1">Id</th>
+                    <th v-if="props.siteCell">Site</th>
+                    <th>Page</th>
+                    <th v-for="displayVisit in displayVisits" v-show="displayVisit.display"><span>{{ displayVisit.name[0].toUpperCase() + displayVisit.name.slice(1) }}</span></th>
+                    <th class="w-1">Data</th>
+                    <th class="w-10">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <VisitsRow v-for="visit in visits" class="[&:nth-child(2n)]:bg-gray-light" :key="visit.id" :visit="visit" :visitDisplay="displayVisits" :siteCell="props.siteCell"/>
+            </tbody>
+        </table>
+    </ContainerSimple>
 </template>
