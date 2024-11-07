@@ -7,10 +7,20 @@ const props = defineProps({
     siteCell: {
         type: Boolean,
         default: true
+    },
+    desc: {
+        type: String,
+        default: null
+    },
+    title: {
+        type: String,
+        default: 'Last visits'
     }
 });
 
-const description = `Here are the last visits of your website${props.siteCell ? 's' : ''}`;
+if (props.desc == null) {
+    props.desc = `Here are the last visits of your website${props.siteCell ? 's' : ''}`;
+}
 
 const visits = ref([
     { id: 1, name: 'Google', page: 'index.html', source: 'FB', campaign: 'lancement', content: 'content', term:'google, search', medium:'email', language: 'fr', platform: 'Chrome'  },
@@ -51,7 +61,7 @@ watch(displayVisits, (newVal) => {
 
 </script>
 <template>
-    <ContainerSimple title="Last visits" :desc="description" :fixedHeight="true" :displayVisits="displayVisits" :toggle="true">
+    <ContainerSimple :title="props.title" :desc="props.desc" :fixedHeight="true" :displayVisits="displayVisits" :toggle="true">
         <table class="w-full" v-if="visits.length >= 1">
             <thead class="bg-primary-light border border-primary-light">
                 <tr class="[&>th]:text-left [&>th]:p-1 [&>th]:px-2 border-primary-light">

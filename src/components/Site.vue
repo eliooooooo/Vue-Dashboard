@@ -9,8 +9,8 @@ import VisitsMultipleCharts from './Sites/VisitsMultipleCharts.vue';
     <div class="grid grid-cols-12 gap-4">
         <div class="col-span-12 flex flex-row justify-between">
             <div class="flex flex-col gap-2">
-                <h1>{ Website name }</h1>
-                <p>Site origin : { Origin link }</p>
+                <h1>Google</h1>
+                <p>Site origin : <a href="#">https://google.fr</a></p>
             </div>
             <div class="flex flex-col gap-2">
                 <button class="btn primary small">Copy ApiKey</button>

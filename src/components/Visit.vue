@@ -1,6 +1,7 @@
 <script setup>
 import { ref } from 'vue'
 import SitesVisitsTable from './Sites/SitesVisitsTable.vue';
+import ContainerSimple from './ContainerSimple.vue';
 
 const visit = ref({ id: 1, name: 'Google', page: 'index.html', source: 'FB', campaign: 'lancement', content: 'content', term:'google, search', medium:'email', language: 'fr', platform: 'Chrome'  })
 
@@ -11,18 +12,13 @@ const visit = ref({ id: 1, name: 'Google', page: 'index.html', source: 'FB', cam
         <div class="flex flex-row justify-between col-span-12">
             <div class="flex flex-col gap-2">
                 <h1>Visit n°83904</h1>
-                <p>Origin site : { Website name }</p>
+                <p>Origin site : <router-link to="/sites/1">Google</router-link></p>
             </div>
             <div class="flex flex-col gap-2">
                 <button class="btn secondary small">Delete </button>
             </div>
         </div>
-        <div class="border border-dark p-4 rounded-md flex flex-col col-span-6">
-            <div>
-                <h1>General informations</h1>
-                <p>Here is the visit general infos.</p>
-            </div>
-            <div class="w-full border-dark border-b pt-2 mb-3"></div>
+        <ContainerSimple title="General informations" desc="Here is the visit general infos" class="col-span-6">
             <div class="flex flex-col gap-2">
                 <p  class="flex flex-row gap-1.5">Page :<a href="#" target="_blank" class="flex flex-row gap-2 items-center">index.html
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-up-right" viewBox="0 0 16 16">
@@ -38,13 +34,8 @@ const visit = ref({ id: 1, name: 'Google', page: 'index.html', source: 'FB', cam
                 <p>Language : EN</p>
                 <p>Platform : Chrome</p>
             </div>
-        </div>
-        <div class="border border-dark p-4 rounded-md flex flex-col col-span-6">
-            <div>
-                <h1>Location informations</h1>
-                <p>Here is the visit location infos.</p>
-            </div>
-            <div class="w-full border-dark border-b pt-2 mb-3"></div>
+        </ContainerSimple>
+        <ContainerSimple title="Location informations" desc="Here is the visit location infos" class="col-span-6">
             <div class="flex flex-col gap-2">
                 <p>Country : France</p>
                 <p>Region : Alsace</p>
@@ -54,16 +45,7 @@ const visit = ref({ id: 1, name: 'Google', page: 'index.html', source: 'FB', cam
                 <p>Latitude : 48.5839</p>
                 <p>Longitude : 7.7455</p>
             </div>
-        </div>
-        <div class="border border-dark p-4 rounded-md flex flex-col col-span-12">
-            <div>
-                <h1>Similar as</h1>
-                <p>Here is similar visits</p>
-            </div>
-            <div class="w-full border-dark border-b pt-2 mb-3"></div>
-            <div class="flex flex-col gap-2">
-                <SitesVisitsTable :container="false"/>
-            </div>
-        </div>
+        </ContainerSimple>
+        <SitesVisitsTable title="Similar as" desc="Here is similar visits" class="col-span-12"/>
     </div>
 </template>
