@@ -5,6 +5,7 @@ import Dashboard from '../components/Dashboard.vue'
 import Sites from '../components/Sites.vue'
 import Site from '../components/Site.vue'
 import Visit from '../components/Visit.vue'
+import Visits from '../components/Visits.vue'
 import Account from '../components/Account.vue'
 import CompanyRegister from '../components/CompanyRegister.vue'
 import Company from '../components/Company.vue'
@@ -108,6 +109,18 @@ const router = createRouter({
                     { name: 'Sites', link: '/sites' },
                     { name: 'Site', link: '/sites/:id' },
                     { name: 'Visit' }
+                ]
+            }
+        },
+        {
+            path: '/visits',
+            name: 'visits',
+            component: Visits,
+            meta: {
+                title: 'Visits - Track My Site',
+                breadcrumb: [
+                    { name: 'Dashboard', link: '/' },
+                    { name: 'Visits' }
                 ]
             }
         },
