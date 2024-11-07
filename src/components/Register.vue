@@ -30,6 +30,10 @@
                         <input type="password" id="password" name="password" placeholder="*****" required current-password/>
                     </div>  
                     <div class="flex flex-col gap-1">
+                        <label for="confirmation">Password confirmation</label>
+                        <input type="password" id="confirmation" name="confirmation" placeholder="*****" required current-password/>
+                    </div>
+                    <div class="flex flex-col gap-1">
                         <label>Company</label>
                         <input type="text" id="company" name="company" placeholder="Company id" required/>
                         <p>Don't have company account? <router-link :to="{ name: 'register-company' }">Register your compagny</router-link></p>

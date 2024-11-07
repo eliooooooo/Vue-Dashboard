@@ -6,7 +6,9 @@
         <div class="container flex flex-col md:flex-row min-h-screen">
             <div class="flex flex-col items-center pt-10 md:pt-20 gap-3 bg-light w-full md:w-1/2 lg:w-1/3 p-5 md:p-10">
                 <h1 class="text-primary !font-medium">Log in to your account</h1>
-                <p class="lg:text-lg font-bold">Don't have an account? <router-link :to="{name: 'register'}">Sign Up</router-link></p>
+                <div class="flex flex-col items-center">
+                    <p class="lg:text-lg font-bold">Don't have an account? <router-link :to="{name: 'register'}">Sign Up</router-link></p>
+                </div>
                 <form class="flex flex-col gap-4 mt-5 md:mt-10 w-full [&>div>input]:rounded-md">
                     <div class="flex flex-col gap-1 w-full">
                         <label for="email">Email</label>
