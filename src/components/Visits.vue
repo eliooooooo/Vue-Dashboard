@@ -42,7 +42,6 @@ const filterVisits = () => {
 }
 
 const resetFilters = () => {
-    console.log('reset');
     site.value = '0';
     source.value = '';
     campaign.value = '';
