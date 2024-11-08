@@ -6,6 +6,7 @@ import Sites from '../components/Sites.vue'
 import Site from '../components/Site.vue'
 import Visit from '../components/Visit.vue'
 import Visits from '../components/Visits.vue'
+import Chart from '../components/Chart.vue'
 import Account from '../components/Account.vue'
 import CompanyRegister from '../components/CompanyRegister.vue'
 import Company from '../components/Company.vue'
@@ -123,6 +124,18 @@ const router = createRouter({
                     { name: 'Visits' }
                 ]
             }
+        },
+        {
+            path: '/chart',
+            name: 'chart',
+            component: Chart,
+            meta: {
+                title: 'Chart - Track My Site',
+                breadcrumb: [
+                    { name: 'Dashboard', link: '/' },
+                    { name: 'Chart' }
+                ]
+            } 
         },
         {
             path: '/terms',
