@@ -1,7 +1,11 @@
 <script setup>
-import { onMounted, ref } from 'vue'
+import { onMounted, ref, watch } from 'vue'
+import { useRoute, useRouter } from 'vue-router';
 import ContainerSimple from './ContainerSimple.vue';
 import SitesVisitsTable from './Sites/SitesVisitsTable.vue';
+
+const route = useRoute();
+const router = useRouter();
 
 const visits = ref([
     { id: 1, name: 'Google', page: 'index.html', source: 'FB', campaign: 'lancement', content: 'content', term:'google, search', medium:'email', language: 'fr', platform: 'Chrome'  },
@@ -50,6 +54,23 @@ const resetFilters = () => {
     filterVisits();
 }
 
+const setUrlParams = () => {
+    router.replace({
+        query: {
+            site: site.value !== '0' ? site.value : undefined,
+            source: source.value || undefined,
+            campaign: campaign.value || undefined,
+            content: content.value || undefined,
+            term: term.value || undefined,
+            medium: medium.value || undefined,
+            language: language.value || undefined,
+            platform: platform.value || undefined,
+        }}).catch(err => {
+            console.log(err);
+        }
+    );
+}
+
 const names = [];
 visits.value.forEach(visit => {
     if (!names.includes(visit.name)) {
@@ -58,6 +79,20 @@ visits.value.forEach(visit => {
 });
 
 onMounted(() => {
+    const query = route.query;
+    site.value = query.site || '0';
+    source.value = query.source || '';
+    campaign.value = query.campaign || '';
+    content.value = query.content || '';
+    term.value = query.term || '';
+    medium.value = query.medium || '';
+    language.value = query.language || '';
+    platform.value = query.platform || '';
+    filterVisits();
+});
+
+watch([site, source, campaign, content, term, medium, language, platform], () => {
+    setUrlParams();
     filterVisits();
 });
 </script>
