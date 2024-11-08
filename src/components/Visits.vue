@@ -3,6 +3,7 @@ import { onMounted, ref, watch } from 'vue'
 import { useRoute, useRouter } from 'vue-router';
 import ContainerSimple from './ContainerSimple.vue';
 import SitesVisitsTable from './Sites/SitesVisitsTable.vue';
+import PageHeader from './PageHeader.vue';
 
 const route = useRoute();
 const router = useRouter();
@@ -98,10 +99,7 @@ watch([site, source, campaign, content, term, medium, language, platform], () =>
 
 <template>
     <div class="grid grid-cols-12 gap-4" >
-        <div class="flex flex-col gap-2 col-span-12">
-            <h1>Visits</h1>
-            <p>Here is all the visits register on your account. Custom the filters to match your needs !</p>   
-        </div>
+        <PageHeader title="Visits" desc="Here is all the visits register on your account. Custom the filters to match your needs !" />
         <ContainerSimple title="Filters" desc="Custom filters to match your needs" @resetFilters="resetFilters" :toggle="true" :resetFilters="true" class="col-span-12">
             <div class="grid grid-cols-4 gap-4">
                 <div class="flex flex-col gap-1">
