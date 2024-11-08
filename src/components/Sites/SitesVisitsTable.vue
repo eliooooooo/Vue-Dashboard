@@ -15,8 +15,13 @@ const props = defineProps({
     title: {
         type: String,
         default: 'Last visits'
+    },
+    filteredVisits: {
+        type: Array,
+        default: []
     }
 });
+
 
 if (props.desc == null) {
     props.desc = `Here are the last visits of your website${props.siteCell ? 's' : ''}`;
@@ -32,6 +37,10 @@ const visits = ref([
     { id: 4, name: 'LinkedIn', page: 'index.html', source: 'LI', campaign: 'lancement', content: 'content', term:'linkedin, search', medium:'social', language: 'en', platform: 'Safari'  },
     { id: 5, name: 'Instagram', page: 'index.html', source: 'IG', campaign: 'lancement', content: 'content', term:'instagram, search', medium:'social', language: 'fr', platform: 'Edge'  }
 ])
+
+if (props.filteredVisits.length > 0) {
+    visits.value = ref(props.filteredVisits);
+}
 
 let displayVisits = localStorage.getItem('displayVisits');
 
@@ -59,6 +68,10 @@ watch(displayVisits, (newVal) => {
     localStorage.setItem('displayVisits', JSON.stringify(newVal));
 }, { deep: true });
 
+watch(() => props.filteredVisits, (newVal) => {
+    visits.value = newVal;
+}, { deep: true });
+
 </script>
 <template>
     <ContainerSimple :title="props.title" :desc="props.desc" :fixedHeight="true" :displayVisits="displayVisits" :toggle="true">
@@ -77,5 +90,6 @@ watch(displayVisits, (newVal) => {
                 <VisitsRow v-for="visit in visits" class="[&:nth-child(2n)]:bg-gray-light" :key="visit.id" :visit="visit" :visitDisplay="displayVisits" :siteCell="props.siteCell"/>
             </tbody>
         </table>
+        <p v-else >No data to display</p>
     </ContainerSimple>
 </template>
