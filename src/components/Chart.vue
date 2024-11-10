@@ -45,5 +45,8 @@ const periodAvaible = ['daily', 'weekly', 'monthly', 'yearly'];
                 <p class="btn primary">Apply</p>
             </div>
         </ContainerSimple>
+        <ContainerSimple title="Custom chart" desc="Here is your custom chart" :toggle="true" class="col-span-12">
+            Custom Chart
+        </ContainerSimple>
     </div>
 </template>

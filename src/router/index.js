@@ -1,15 +1,15 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import Login from '../components/Login.vue'
-import Register from '../components/Register.vue'
+import Login from '../components/User/Login.vue'
+import Register from '../components/User/Register.vue'
 import Dashboard from '../components/Dashboard.vue'
 import Sites from '../components/Sites.vue'
 import Site from '../components/Site.vue'
 import Visit from '../components/Visit.vue'
 import Visits from '../components/Visits.vue'
 import Chart from '../components/Chart.vue'
-import Account from '../components/Account.vue'
-import CompanyRegister from '../components/CompanyRegister.vue'
-import Company from '../components/Company.vue'
+import Account from '../components/User/Account.vue'
+import CompanyRegister from '../components/User/CompanyRegister.vue'
+import Company from '../components/User/Company.vue'
 
 const router = createRouter({
     history: createWebHistory(import.meta.env.BASE_URL),
