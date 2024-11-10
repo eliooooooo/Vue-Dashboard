@@ -2,6 +2,7 @@
 import { ref } from 'vue'
 import SitesVisitsTable from './Sites/SitesVisitsTable.vue';
 import ContainerSimple from './ContainerSimple.vue';
+import PageHeader from './PageHeader.vue';
 
 const visit = ref({ id: 1, name: 'Google', page: 'index.html', source: 'FB', campaign: 'lancement', content: 'content', term:'google, search', medium:'email', language: 'fr', platform: 'Chrome'  })
 
@@ -9,15 +10,12 @@ const visit = ref({ id: 1, name: 'Google', page: 'index.html', source: 'FB', cam
 
 <template>
     <div class="grid grid-cols-12 gap-4">
-        <div class="flex flex-row justify-between col-span-12">
-            <div class="flex flex-col gap-2">
-                <h1>Visit n°83904</h1>
-                <p>Origin site : <router-link to="/sites/1">Google</router-link></p>
-            </div>
+        <PageHeader title="Visit n°83904" >
             <div class="flex flex-col gap-2">
                 <button class="btn secondary small">Delete </button>
             </div>
-        </div>
+        </PageHeader>
+        <div class="col-span-12">Origin site : <router-link to="/sites/1">Google</router-link></div>
         <ContainerSimple title="General informations" desc="Here is the visit general infos" class="col-span-6">
             <div class="flex flex-col gap-2">
                 <p  class="flex flex-row gap-1.5">Page :<a href="#" target="_blank" class="flex flex-row gap-2 items-center">index.html
