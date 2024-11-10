@@ -1,5 +1,5 @@
 <script setup>
-import UserCard from './User/UserCard.vue';
+import UserCard from './UserCard.vue';
 </script>
 
 <template>

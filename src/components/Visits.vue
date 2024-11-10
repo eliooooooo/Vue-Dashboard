@@ -2,7 +2,7 @@
 import { onMounted, ref, watch } from 'vue'
 import { useRoute, useRouter } from 'vue-router';
 import ContainerSimple from './ContainerSimple.vue';
-import SitesVisitsTable from './Sites/SitesVisitsTable.vue';
+import SitesVisitsTable from './Visits/SitesVisitsTable.vue';
 import PageHeader from './PageHeader.vue';
 
 const route = useRoute();

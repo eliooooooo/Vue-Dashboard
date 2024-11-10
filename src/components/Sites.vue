@@ -1,9 +1,9 @@
 <script setup>
-import SitesNewVisits from './Sites/SitesNewVisits.vue';
-import SitesNumber from './Sites/SitesNumber.vue';
+import SitesNewVisits from './Sites/Header/SitesNewVisits.vue';
+import SitesNumber from './Sites/Header/SitesNumber.vue';
 import SitesTable from './Sites/SitesTable.vue';
-import SitesVisits from './Sites/SitesVisits.vue';
-import SitesVisitsTable from './Sites/SitesVisitsTable.vue';
+import SitesVisits from './Sites/Header/SitesVisits.vue';
+import SitesVisitsTable from './Visits/SitesVisitsTable.vue';
 </script>
 
 <template>

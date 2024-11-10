@@ -1,5 +1,4 @@
 <script setup>
-import SitesTable from './Sites/SitesTable.vue';
 import SitesRanking from './Sites/SitesRanking.vue';
 import CampaignRanking from './Sites/CampaignRanking.vue';
 import OverviewChart from './Sites/OverviewChart.vue';

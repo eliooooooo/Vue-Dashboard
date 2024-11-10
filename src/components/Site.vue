@@ -1,9 +1,9 @@
 <script setup>
 import PageHeader from './PageHeader.vue';
 import LocationChart from './Sites/LocationChart.vue';
-import SitesVisitsTable from './Sites/SitesVisitsTable.vue';
-import VisitsChart from './Sites/VisitsChart.vue';
-import VisitsMultipleCharts from './Sites/VisitsMultipleCharts.vue';
+import SitesVisitsTable from './Visits/SitesVisitsTable.vue';
+import VisitsChart from './Visits/VisitsChart.vue';
+import VisitsMultipleCharts from './Visits/VisitsMultipleCharts.vue';
 </script>
 
 <template>

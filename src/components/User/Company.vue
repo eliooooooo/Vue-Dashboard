@@ -1,6 +1,6 @@
 <script setup>
-import CompanyCard from './Company/CompanyCard.vue';
-import CompanyMemberList from './Company/CompanyMemberList.vue';
+import CompanyCard from './CompanyCard.vue';
+import CompanyMemberList from './CompanyMemberList.vue';
 </script>
 
 <template>

@@ -1,6 +1,6 @@
 <script setup>
 import { ref } from 'vue'
-import SitesVisitsTable from './Sites/SitesVisitsTable.vue';
+import SitesVisitsTable from './Visits/SitesVisitsTable.vue';
 import ContainerSimple from './ContainerSimple.vue';
 import PageHeader from './PageHeader.vue';
 
