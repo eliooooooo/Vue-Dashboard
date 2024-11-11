@@ -1,10 +1,10 @@
 <script setup>
 import { ref, watch, onMounted } from 'vue'
 import { Bar } from 'vue-chartjs'
-import { Chart as ChartJS, Title, Tooltip, Legend } from 'chart.js'
+import { Chart as ChartJS, Title, Tooltip, Legend, BarElement, CategoryScale } from 'chart.js'
 import ContainerSimple from '../ContainerSimple.vue';
 
-ChartJS.register(Title, Tooltip, Legend)
+ChartJS.register(Title, Tooltip, Legend, BarElement, CategoryScale)
 
 const pagesDatas = ref ({
     weekly: {
