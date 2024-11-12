@@ -1,10 +1,42 @@
 <script setup>
 import { ref } from 'vue';
+import { Bar, Line, Doughnut, Pie, Radar, PolarArea } from 'vue-chartjs';
+import { Chart as ChartJS, LineElement, BarElement, PointElement, LineController, BarController, PieController, DoughnutController, RadarController, PolarAreaController, BubbleController, ScatterController, CategoryScale, LinearScale, Title, Tooltip, Legend, ArcElement, RadialLinearScale } from 'chart.js';
+
+ChartJS.register( RadialLinearScale, LineElement, ArcElement, BarElement, PointElement, LineController, BarController, PieController, DoughnutController, RadarController, PolarAreaController, BubbleController, ScatterController, CategoryScale, LinearScale, Title, Tooltip, Legend);
+
+const ChartOptions = ref({
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: {
+        title: {
+            display: true,
+            text: 'Custom Chart'
+        },
+        legend: {
+            display: true,
+            position: 'bottom'
+        }
+    }
+});
+
+const ChartData = ref({
+    labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+    datasets: [
+        {
+            label: 'Visits',
+            data: [65, 59, 80, 81, 56, 55, 40],
+            borderColor: 'rgb(75, 192, 192)',
+            backgroundColor: 'rgba(75, 192, 192, 0.2)',
+        }
+    ]
+});
+
 import PageHeader from './PageHeader.vue';
 import ContainerSimple from './ContainerSimple.vue';
 
 const chartType = ref('line');
-const chartAvaible = ['line', 'bar', 'pie', 'doughnut', 'radar', 'polarArea', 'bubble', 'scatter'];
+const chartAvaible = ['line', 'bar', 'pie', 'doughnut', 'radar', 'polarArea'];
 
 const dataSelect = ref('visits');
 const dataAvaible = ['visits', 'pageviews', 'users', 'newUsers', 'sessions', 'bounceRate', 'avgSessionDuration', 'pageviewsPerSession', 'goalCompletionsAll', 'goalConversionRateAll', 'goalValueAll', 'goalValuePerSession', 'goalCompletionsAllPerSession'];
@@ -46,7 +78,14 @@ const periodAvaible = ['daily', 'weekly', 'monthly', 'yearly'];
             </div>
         </ContainerSimple>
         <ContainerSimple title="Custom chart" desc="Here is your custom chart" :toggle="true" class="col-span-12">
-            Custom Chart
+            <div v-if="chartType" style="width: 100%; height: 600px;">
+                <Bar v-if="chartType == 'bar'" :data="ChartData" :options="ChartOptions" />
+                <Line v-if="chartType == 'line'" :data="ChartData" :options="ChartOptions" />
+                <Doughnut v-if="chartType == 'doughnut'" :data="ChartData" :options="ChartOptions" />
+                <Pie v-if="chartType == 'pie'" :data="ChartData" :options="ChartOptions" />
+                <Radar v-if="chartType == 'radar'" :data="ChartData" :options="ChartOptions" />
+                <PolarArea v-if="chartType == 'polarArea'" :data="ChartData" :options="ChartOptions" />
+            </div>
         </ContainerSimple>
     </div>
 </template>
