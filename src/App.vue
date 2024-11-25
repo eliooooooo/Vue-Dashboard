@@ -6,6 +6,7 @@ import Aside from './components/Aside.vue'
 import SearchBar from './components/SearchBar.vue'
 import Breadcrumb from './components/Breadcrumb.vue'
 import { useRoute } from 'vue-router'
+import Banner from './components/Sites/Header/Banner.vue'
 
 const route = useRoute()
 </script>
@@ -13,6 +14,7 @@ const route = useRoute()
 <template>
   <div v-if="!route.meta.full">
     <BypassLink />
+    <Banner text="This site is still under development ! The back-end part has not started and the front part is in construction." />
     <div class="static w-full bg-light text-dark flex flex-col items-center border-b border-dark h-[134px] md:h-[102px]">
       <Header />
       <div class="relative container flex flex-col md:flex-row gap-3 items-center py-2">
