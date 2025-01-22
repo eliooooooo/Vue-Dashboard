@@ -49,7 +49,7 @@ const periodAvaible = ['daily', 'weekly', 'monthly', 'yearly'];
     <div class="grid grid-cols-12 gap-4">
         <PageHeader title="Chart" desc="From this page, you can custom the chart to match your needs." />
         <ContainerSimple title="Chat options" desc="Customize this options to update the chart." :toggle="true" class="col-span-12">
-            <div class="grid grid-cols-4 gap-4">
+            <div class="grid md:grid-cols-4 gap-4">
                 <div class="flex flex-col gap-1">
                     <label for="site">Chart type :</label>
                     <select id="site" name="site" v-model="chartType" @change="filterVisits">

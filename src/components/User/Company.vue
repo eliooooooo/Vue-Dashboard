@@ -5,7 +5,7 @@ import CompanyMemberList from './CompanyMemberList.vue';
 
 <template>
     <div class="grid grid-cols-12 gap-4">
-        <CompanyCard class="col-span-3" />
-        <CompanyMemberList class="col-span-9" />
+        <CompanyCard class="col-span-12 lg:col-span-3" />
+        <CompanyMemberList class="col-span-12 lg:col-span-9" />
     </div>
 </template>

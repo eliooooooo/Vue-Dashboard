@@ -49,12 +49,12 @@ if (props.period) {
 
 <template>
     <div class="border border-dark p-4 rounded-md flex flex-col" x-data="{ openContainer: true }">
-        <div class="flex flex-row justify-between items-center">
+        <div class="flex flex-col md:flex-row justify-between md:items-center">
             <div>
                 <h1 v-if="props.title">{{ props.title }}</h1>
                 <p v-if="props.desc">{{ props.desc }}</p>
             </div>
-            <div class="flex flex-row gap-3 items-center">
+            <div class="flex flex-row gap-3 self-end items-center">
                 <select v-if="period" v-model="selectedPeriod" @change="$emit('updateChartData', selectedPeriod)">
                     <option value="weekly">Weekly</option>
                     <option value="monthly">Monthly</option>
@@ -79,7 +79,7 @@ if (props.period) {
                 </div>
             </div>
         </div>
-        <div class="flex flex-row gap-4 mt-2">
+        <div class="flex flex-row gap-4 mt-2 w-full overflow-scroll">
             <div v-if="props.displayVisits" v-for="displayVisit in displayVisits" class="flex flex-row items-center gap-2">
                 <input type="checkbox" :name="displayVisit.name" :id="displayVisit.name" v-model="displayVisit.display">
                 <label :for="displayVisit.name">{{ displayVisit.name[0].toUpperCase() + displayVisit.name.slice(1) }}</label>

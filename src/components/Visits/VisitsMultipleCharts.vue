@@ -246,7 +246,7 @@ onMounted(() => {
 
 <template>
     <div class="grid grid-cols-12 gap-4">
-        <ContainerSimple title="Custom your chart" desc="Select the output you want to see" class="col-span-4">
+        <ContainerSimple title="Custom your chart" desc="Select the output you want to see" class="col-span-12 lg:col-span-4">
             <div class="flex flex-col">
                 <label for="period">Period :</label>
                 <select id="period" v-model="selectedPeriod">
@@ -267,7 +267,7 @@ onMounted(() => {
                 <input type="number" placeholder="Enter a number" v-model="maxElements" />
             </div>
         </ContainerSimple>
-        <ContainerSimple :title="chartElement.find(element => element.name === selectedChartOption).value" desc="placeholder" class="col-span-8">
+        <ContainerSimple :title="chartElement.find(element => element.name === selectedChartOption).value" desc="placeholder" class="col-span-12 lg:col-span-8">
             <Bar :data="chartData" :options="chartOptions" />
         </ContainerSimple>
     </div>

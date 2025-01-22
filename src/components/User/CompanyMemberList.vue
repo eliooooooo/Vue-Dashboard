@@ -12,12 +12,12 @@ const users = ref([
 
 <template>
     <div class="border h-fit border-dark p-4 rounded-md flex flex-col">
-        <div class="flex flex-row justify-between items-center">
+        <div class="flex flex-col md:flex-row justify-between items-center">
             <div>
                 <h1>Company members accounts</h1>
                 <p>Here are the user accounts associated with your company</p> 
             </div>
-            <div class="flex flex-row gap-3 items-center">
+            <div class="flex flex-row gap-3 items-center self-end">
                 <router-link :to="{ name: 'register' }" class="btn primary flex flex-row gap-2 items-center">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16">
                         <path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2"/>
@@ -27,7 +27,7 @@ const users = ref([
             </div>
         </div>
         <div class="w-full border-dark border-b pt-2"></div>
-        <div>
+        <div class="w-full overflow-scroll">
             <table class="w-full mt-3" v-if="users">
                 <thead class="bg-primary-light border border-primary-light">
                     <tr class="[&>th]:text-left [&>th]:p-1 [&>th]:px-2 border-primary-light">

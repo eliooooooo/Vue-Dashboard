@@ -25,7 +25,7 @@ const route = useRoute()
     <div class="container_aside relative flex w-full overflow-hidden" x-data="{ asideOpen: false }">
       <Aside />
       <div class="container_content overflow-scroll overflow-x-hidden bg-light flex flex-col justify-between flex-grow h-[calc(100vh-134px)] md:h-[calc(100vh-102px)]">
-        <div class="container px-10 py-4">
+        <div class="container px-4 sm:px-6 md:px-10 py-4">
           <router-view id="main" />
         </div>
         <Footer />

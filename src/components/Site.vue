@@ -14,8 +14,8 @@ import VisitsMultipleCharts from './Visits/VisitsMultipleCharts.vue';
                 <button class="btn secondary small">Delete </button>
             </div>
         </PageHeader>
-        <VisitsChart class="col-span-8" />
-        <LocationChart class="col-span-4" />
+        <VisitsChart class="col-span-12 lg:col-span-8" />
+        <LocationChart class="col-span-12 lg:col-span-4" />
         <SitesVisitsTable class="col-span-12" :site-cell="false"/>
         <VisitsMultipleCharts class="col-span-12" />
     </div>

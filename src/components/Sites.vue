@@ -8,7 +8,7 @@ import SitesVisitsTable from './Visits/SitesVisitsTable.vue';
 
 <template>
     <div class="flex flex-col gap-4">
-        <div class="flex flex-row gap-4 [&>*]:w-full w-full">
+        <div class="flex flex-col lg:flex-row gap-4 [&>*]:w-full w-full">
             <SitesNumber />
             <SitesVisits />
             <SitesNewVisits />

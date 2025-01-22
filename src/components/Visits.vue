@@ -101,7 +101,7 @@ watch([site, source, campaign, content, term, medium, language, platform], () =>
     <div class="grid grid-cols-12 gap-4" >
         <PageHeader title="Visits" desc="Here is all the visits register on your account. Custom the filters to match your needs !" />
         <ContainerSimple title="Filters" desc="Custom filters to match your needs" @resetFilters="resetFilters" :toggle="true" :resetFilters="true" class="col-span-12">
-            <div class="grid grid-cols-4 gap-4">
+            <div class="grid md:grid-cols-4 gap-4">
                 <div class="flex flex-col gap-1">
                     <label for="site">Site :</label>
                     <select id="site" name="site" v-model="site" @change="filterVisits">

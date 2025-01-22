@@ -16,7 +16,7 @@ const visit = ref({ id: 1, name: 'Google', page: 'index.html', source: 'FB', cam
             </div>
         </PageHeader>
         <div class="col-span-12">Origin site : <router-link to="/sites/1">Google</router-link></div>
-        <ContainerSimple title="General informations" desc="Here is the visit general infos" class="col-span-6">
+        <ContainerSimple title="General informations" desc="Here is the visit general infos" class="col-span-12 md:col-span-6">
             <div class="flex flex-col gap-2">
                 <p  class="flex flex-row gap-1.5">Page :<a href="#" target="_blank" class="flex flex-row gap-2 items-center">index.html
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-up-right" viewBox="0 0 16 16">
@@ -33,7 +33,7 @@ const visit = ref({ id: 1, name: 'Google', page: 'index.html', source: 'FB', cam
                 <p>Platform : Chrome</p>
             </div>
         </ContainerSimple>
-        <ContainerSimple title="Location informations" desc="Here is the visit location infos" class="col-span-6">
+        <ContainerSimple title="Location informations" desc="Here is the visit location infos" class="col-span-12 md:col-span-6">
             <div class="flex flex-col gap-2">
                 <p>Country : France</p>
                 <p>Region : Alsace</p>
